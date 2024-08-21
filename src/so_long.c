@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/08/21 16:41:30 by jotrujil         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // -----------------------------------------------------------------------------
 // Codam Coding College, Amsterdam @ 2022-2023 by W2Wizard.
 // See README in the root project for more information.
@@ -42,15 +54,15 @@ void ft_hook(void* param)
 {
 	mlx_t* mlx = param;
 
-	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE) || mlx_is_key_down(mlx, MLX_KEY_Q))
+	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(mlx);
-	if (mlx_is_key_down(mlx, MLX_KEY_UP) || mlx_is_key_down(mlx, MLX_KEY_W))
+	if (mlx_is_key_down(mlx, MLX_KEY_UP))
 		image->instances[0].y -= 5;
-	if (mlx_is_key_down(mlx, MLX_KEY_DOWN) || mlx_is_key_down(mlx, MLX_KEY_S))
+	if (mlx_is_key_down(mlx, MLX_KEY_DOWN))
 		image->instances[0].y += 5;
-	if (mlx_is_key_down(mlx, MLX_KEY_LEFT) || mlx_is_key_down(mlx, MLX_KEY_A))
+	if (mlx_is_key_down(mlx, MLX_KEY_LEFT))
 		image->instances[0].x -= 5;
-	if (mlx_is_key_down(mlx, MLX_KEY_RIGHT) || mlx_is_key_down(mlx, MLX_KEY_D))
+	if (mlx_is_key_down(mlx, MLX_KEY_RIGHT))
 		image->instances[0].x += 5;
 }
 
