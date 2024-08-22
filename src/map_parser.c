@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:56:04 by jotrujil         ###   ########.fr       */
+/*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/08/22 18:58:20 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "../lib/MLX42/include/MLX42/MLX42.h"
-# include "../lib/libft/libft.h"
-# include "../lib/get_next_line/get_next_line.h"
-
-# include <stdio.h>
-# include <fcntl.h>
-
-# define PIXELS 64
-
-typedef struct s_game
+char	*read_map(char *map)
 {
-	char	**grid;
-	size_t	width;
-	size_t	height;
-	mlx_t	mlx;
+	char	*line;
+	char	*map_readed;
+	int		fd;
 
-}	t_game;
-
-void	error_msg(char *msg);
-void	check_file_format(char *file);
-
-#endif
+	fd = open(map, O_RDONLY);
+	map_readed = ft_calloc(1, 1);
+	if (!map_readed)
+		return (NULL);
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line)
+		{
+			map_readed = ft_strjoin(map_readed, line);
+			free(line);
+		}
+		else
+			break ;
+		close(fd);
+		return (map_readed);
+	}
+}

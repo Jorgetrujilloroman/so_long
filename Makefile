@@ -6,7 +6,7 @@ MLX42FLAGS	:= -ldl -lglfw -pthread -lm
 
 MLX42		:= ./lib/MLX42/build/libmlx42.a
 LIBFT		:= ./lib/libft/libft.a
-INCLUDE 	:= -I ./includes -I ./lib/MLX42/include
+INCLUDE 	:= -I ./includes -I ./lib/MLX42/include -I .lib/get_next_line
 
 SRC			:= ./src/so_long.c \
 				./src/utils.c \

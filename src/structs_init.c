@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   structs_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:56:04 by jotrujil         ###   ########.fr       */
+/*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/08/22 18:13:55 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "../lib/MLX42/include/MLX42/MLX42.h"
-# include "../lib/libft/libft.h"
-# include "../lib/get_next_line/get_next_line.h"
-
-# include <stdio.h>
-# include <fcntl.h>
-
-# define PIXELS 64
-
-typedef struct s_game
+t_game	data_init(char *map)
 {
-	char	**grid;
-	size_t	width;
-	size_t	height;
-	mlx_t	mlx;
+	char	*map_str;
+	char	**map_array;
+	t_game	*data;
 
-}	t_game;
-
-void	error_msg(char *msg);
-void	check_file_format(char *file);
-
-#endif
+	map_str = read_map(map);
+}

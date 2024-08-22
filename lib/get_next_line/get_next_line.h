@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:56:04 by jotrujil         ###   ########.fr       */
+/*   Created: 2024/02/05 18:18:29 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/02/08 12:04:09 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef GET_NEXT_LINE_H
 
-# include "../lib/MLX42/include/MLX42/MLX42.h"
-# include "../lib/libft/libft.h"
-# include "../lib/get_next_line/get_next_line.h"
+# define GET_NEXT_LINE_H
 
 # include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 # include <fcntl.h>
 
-# define PIXELS 64
+# ifndef BUFFER_SIZE
 
-typedef struct s_game
-{
-	char	**grid;
-	size_t	width;
-	size_t	height;
-	mlx_t	mlx;
+#  define BUFFER_SIZE 42
+# endif
 
-}	t_game;
-
-void	error_msg(char *msg);
-void	check_file_format(char *file);
-
+char	*get_next_line(int fd);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
 #endif
