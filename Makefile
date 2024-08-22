@@ -8,7 +8,9 @@ MLX42		:= ./lib/MLX42/build/libmlx42.a
 LIBFT		:= ./lib/libft/libft.a
 INCLUDE 	:= -I ./includes -I ./lib/MLX42/include
 
-SRC			:= ./src/so_long.c
+SRC			:= ./src/so_long.c \
+				./src/utils.c \
+				./src/map_checker.c
 OBJ_DIR 	:= obj
 # Generate object files inside obj/ folder
 OBJ 		:= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))

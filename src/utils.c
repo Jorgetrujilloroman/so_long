@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 12:58:17 by jotrujil         ###   ########.fr       */
+/*   Created: 2024/08/22 11:53:01 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/08/22 11:59:08 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
-int	main(int argc, char **argv)
+void	error_msg(char *msg)
 {
-	if (argc != 2)
-		error_msg("Please, use one .ber map file as argument ¬¬'");
-	check_file_format(argv[1]);
+	ft_putstr_fd("Error\n", 2);
+	ft_putendl_fd(msg, 2);
+	exit(1);
 }
