@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:56:04 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/23 13:05:42 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,9 @@ typedef struct s_game
 
 void	error_msg(char *msg);
 void	check_file_format(char *file);
+t_game	*data_init(char *map);
+char	*read_map(char *map);
+void	map_empty_check(char *map);
+void	map_empty_lines_check(char *map);
 
 #endif

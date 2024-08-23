@@ -1,7 +1,7 @@
 PROJECT 	:= so_long 
 CC 			:= gcc
 NAME		:= so_long
-CFLAGS		:= -Wextra -Wall -Werror
+CFLAGS		:= -Wextra -Wall #-Werror
 MLX42FLAGS	:= -ldl -lglfw -pthread -lm
 
 MLX42		:= ./lib/MLX42/build/libmlx42.a
@@ -10,7 +10,12 @@ INCLUDE 	:= -I ./includes -I ./lib/MLX42/include -I .lib/get_next_line
 
 SRC			:= ./src/so_long.c \
 				./src/utils.c \
-				./src/map_checker.c
+				./src/map_checks.c \
+				./src/structs_init.c \
+				./src/src/map_parser.c \
+				./lib/get_next_line/get_next_line.c \
+				./lib//get_next_line/get_next_line_utils.c
+
 OBJ_DIR 	:= obj
 # Generate object files inside obj/ folder
 OBJ 		:= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
@@ -34,7 +39,11 @@ $(LIBFT):
 
 $(OBJ_DIR)/%.o: ./src/%.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(OBJ_DIR)/%.o: ./lib/get_next_line/%.c
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)

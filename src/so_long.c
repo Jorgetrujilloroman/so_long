@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:09:04 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/23 10:48:58 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	main(int argc, char **argv)
 		error_msg("Please, use one .ber map file as argument ¬¬'");
 	check_file_format(argv[1]);
 	game = data_init(argv[1]);
-	game->mlx = mlx_init(game->width * PIXELS, game->height * PIXELS,
-			"so_long", false);
+	/* game->mlx = mlx_init(game->width * PIXELS, game->height * PIXELS,
+			"so_long", false); */
 }

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/22 18:58:20 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/23 11:32:04 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*read_map(char *map)
 		}
 		else
 			break ;
-		close(fd);
-		return (map_readed);
 	}
+	close(fd);
+	return (map_readed);
 }
