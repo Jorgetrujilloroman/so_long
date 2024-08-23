@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/23 13:05:53 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/23 17:41:35 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,7 @@ t_game	*data_init(char *map)
 	map_str = read_map(map);
 	map_empty_check(map_str);
 	map_empty_lines_check(map_str);
+	map_content_check(map_str);
+	map_array = ft_split(map_str, '\n');
+	map_shape_check(map_array);
 }
