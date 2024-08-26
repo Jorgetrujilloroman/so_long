@@ -13,6 +13,7 @@ SRC			:= ./src/so_long.c \
 				./src/map_checks.c \
 				./src/structs_init.c \
 				./src/src/map_parser.c \
+				./src/src/img_loader.c \
 				./lib/get_next_line/get_next_line.c \
 				./lib//get_next_line/get_next_line_utils.c
 
