@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 17:30:29 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/26 18:08:04 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ typedef struct s_game
 	char	**grid;
 	size_t	width;
 	size_t	height;
+	size_t	moves;
+	size_t	fish;
 	mlx_t	*mlx;
-
+	t_img	*img;
 }	t_game;
 
 typedef struct s_img

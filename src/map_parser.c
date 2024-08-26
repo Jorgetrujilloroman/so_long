@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/23 11:32:04 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/26 18:13:51 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,36 @@ char	*read_map(char *map)
 	}
 	close(fd);
 	return (map_readed);
+}
+
+size_t	count_rows(char **grid)
+{
+	size_t	rows;
+
+	rows = 0;
+	while (grid[rows])
+		rows++;
+	return (rows);
+}
+
+size_t	count_fish(t_game *game)
+{
+	size_t	x;
+	size_t	y;
+	size_t	fish;
+
+	y = 0;
+	fish = 0;
+	while (y < game->height)
+	{
+		x = 0;
+		while (x < game->width)
+		{
+			if (game->grid[y][x] == 'C')
+				fish++;
+			x++;
+		}
+		y++;
+	}
+	return (fish);
 }

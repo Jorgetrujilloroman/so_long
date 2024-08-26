@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 17:29:35 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/26 18:09:25 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_game	*data_init(char *map)
 	map_content_check(map_str);
 	map_array = ft_split(map_str, '\n');
 	map_shape_check(map_array);
+	data = game_init(map_array);
 }
 
 t_img	*img_init(mlx_t *mlx)
@@ -35,4 +36,19 @@ t_img	*img_init(mlx_t *mlx)
 		return (NULL);
 	assets = load_all_textures(mlx, assets);
 	return (assets);
+}
+
+t_game	*game_init(char **grid)
+{
+	t_game	*game;
+
+	game = (t_game *)ft_calloc(1, sizeof(t_game));
+	if (!game)
+		error_msg("Game struct memory allocation failed.");
+	game->grid = grid;
+	game->width = ft_strlen(grid[0]);
+	game->height = count_rows(grid);
+	game->moves = 0;
+	game->fish = count_fish();
+	//TODO
 }
