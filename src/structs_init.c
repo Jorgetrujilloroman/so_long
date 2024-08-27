@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 18:09:25 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:36:09 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,8 @@ t_game	*game_init(char **grid)
 	game->height = count_rows(grid);
 	game->moves = 0;
 	game->fish = count_fish();
-	//TODO
+	game->dolphin_x = get_element_pos(game, "P", "x");
+	game->dolphin_y = get_element_pos(game, "P", "y");
+	game->exit_x = get_element_pos(game, "E", "x");
+	game->exit_x = get_element_pos(game, "E", "y");
 }

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 18:13:51 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:30:25 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,29 @@ size_t	count_fish(t_game *game)
 		y++;
 	}
 	return (fish);
+}
+
+size_t	get_element_pos(t_game	*game, char element, char coordinate)
+{
+	size_t	x;
+	size_t	y;
+
+	y = 0;
+	while (y < game->height)
+	{
+		x = 0;
+		while (x < game->width)
+		{
+			if (game->grid[y][x] == element)
+			{
+				if (coordinate == "x")
+					return (x);
+				else
+					return (y);
+			}
+			x++;
+		}
+		y++;
+	}
+	return (0);
 }

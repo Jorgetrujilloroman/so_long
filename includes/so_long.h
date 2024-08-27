@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 18:08:04 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/27 13:10:32 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,21 @@
 
 typedef struct s_game
 {
-	char	**grid;
-	size_t	width;
-	size_t	height;
-	size_t	moves;
-	size_t	fish;
-	mlx_t	*mlx;
-	t_img	*img;
+	char			**grid;
+	size_t			width;
+	size_t			height;
+	size_t			moves;
+	size_t			fish;
+	size_t			dolphin_x;
+	size_t			dolphin_y;
+	size_t			exit_x;
+	size_t			exit_y;
+	mlx_t			*mlx;
+	mlx_texture_t	*dolphin_up;
+	mlx_texture_t	*dolphin_down;
+	mlx_texture_t	*dolphin_left;
+	mlx_texture_t	*dolphin_right;
+	t_img			*img;
 }	t_game;
 
 typedef struct s_img
@@ -54,6 +62,8 @@ void	map_empty_check(char *map);
 void	map_empty_lines_check(char *map);
 void	map_content_check(char *map);
 void	map_shape_check(char **grid);
+size_t	count_rows(char **grid);
+size_t	count_fish(t_game *game);
 
 //Images load
 t_img	*img_init(mlx_t *mlx);
