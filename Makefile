@@ -10,7 +10,8 @@ INCLUDE 	:= -I ./includes -I ./lib/MLX42/include -I .lib/get_next_line
 
 SRC			:= ./src/so_long.c \
 				./src/utils.c \
-				./src/map_checks.c \
+				./src/map_checker.c \
+				./src/map_checker_2.c \
 				./src/structs_init.c \
 				./src/src/map_parser.c \
 				./src/src/img_loader.c \

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:41:38 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 17:39:56 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 12:04:45 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,20 @@ void	load_texture(mlx_t *mlx, t_img *img, char *file_path,
 	if (!*texture)
 		error_msg("Problem with texture");
 	mlx_delete_texture(tmp_texture);
+}
+
+void	load_dolphin_textures(t_game *game)
+{
+	game->dolphin_up = mlx_load_png("./sprites/dolphin_up.png");
+	if (!game->dolphin_up)
+		error_msg("Problem loading PNG file");
+	game->dolphin_down = mlx_load_png("./sprites/dolphin_down.png");
+	if (!game->dolphin_down)
+		error_msg("Problem loading PNG file");
+	game->dolphin_left = mlx_load_png("./sprites/dolphin_left.png");
+	if (!game->dolphin_left)
+		error_msg("Problem loading PNG file");
+	game->dolphin_right = mlx_load_png("./sprites/dolphin_right.png");
+	if (!game->dolphin_right)
+		error_msg("Problem loading PNG file");
 }

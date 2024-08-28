@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/27 13:10:32 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 13:30:46 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_img
 
 void	error_msg(char *msg);
 
-// Map Load
+// Map load & checks
 void	check_file_format(char *file);
 t_game	*data_init(char *map);
 char	*read_map(char *map);
@@ -62,13 +62,19 @@ void	map_empty_check(char *map);
 void	map_empty_lines_check(char *map);
 void	map_content_check(char *map);
 void	map_shape_check(char **grid);
+void	walls_check(t_game	*game);
 size_t	count_rows(char **grid);
 size_t	count_fish(t_game *game);
+size_t	get_element_pos(t_game	*game, char element, char coordinate);
 
-//Images load
+// Images & textures load
 t_img	*img_init(mlx_t *mlx);
 t_img	*load_all_textures(mlx_t *mlx, t_img *img);
 void	load_texture(mlx_t *mlx, t_img *img, char *file_path,
 			mlx_image_t **texture);
+void	load_dolphin_textures(t_game *game);
+
+// Game
+t_game	*game_init(char **grid);
 
 #endif

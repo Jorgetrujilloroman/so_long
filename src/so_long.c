@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/26 17:46:40 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 13:14:01 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main(int argc, char **argv)
 	if (!images)
 		error_msg("Failed to initialite images");
 	game->img = images;
-	fill_background(game);
+	//fill_background(game);
 }
