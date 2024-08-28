@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/27 13:30:25 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:17:11 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ size_t	get_element_pos(t_game	*game, char element, char coordinate)
 		{
 			if (game->grid[y][x] == element)
 			{
-				if (coordinate == "x")
+				if (coordinate == 'x')
 					return (x);
 				else
 					return (y);

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 13:30:46 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 17:10:52 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,21 @@
 
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdlib.h>
 
 # define PIXELS 64
+
+typedef struct s_img
+{
+	mlx_image_t	*sand;
+	mlx_image_t	*rock;
+	mlx_image_t	*fish;
+	mlx_image_t	*dolphin;
+	mlx_image_t	*enemy;
+	mlx_image_t	*exit_closed;
+	mlx_image_t	*exit_open;
+}	t_img;
+
 
 typedef struct s_game
 {
@@ -41,17 +54,6 @@ typedef struct s_game
 	t_img			*img;
 }	t_game;
 
-typedef struct s_img
-{
-	mlx_image_t	*sand;
-	mlx_image_t	*rock;
-	mlx_image_t	*fish;
-	mlx_image_t	*dolphin;
-	mlx_image_t	*enemy;
-	mlx_image_t	*exit_closed;
-	mlx_image_t	*exit_open;
-}	t_img;
-
 void	error_msg(char *msg);
 
 // Map load & checks
@@ -66,6 +68,9 @@ void	walls_check(t_game	*game);
 size_t	count_rows(char **grid);
 size_t	count_fish(t_game *game);
 size_t	get_element_pos(t_game	*game, char element, char coordinate);
+
+// Path checker
+void	flood_fill(t_game *game);
 
 // Images & textures load
 t_img	*img_init(mlx_t *mlx);
