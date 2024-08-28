@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:10:52 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/28 18:01:25 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,16 @@ size_t	count_rows(char **grid);
 size_t	count_fish(t_game *game);
 size_t	get_element_pos(t_game	*game, char element, char coordinate);
 
+// Map Rendering
+void	fill_background(t_game *game);
+
 // Path checker
 void	flood_fill(t_game *game);
 
 // Images & textures load
 t_img	*img_init(mlx_t *mlx);
 t_img	*load_all_textures(mlx_t *mlx, t_img *img);
-void	load_texture(mlx_t *mlx, t_img *img, char *file_path,
-			mlx_image_t **texture);
+void	load_texture(mlx_t *mlx, char *file_path, mlx_image_t **texture);
 void	load_dolphin_textures(t_game *game);
 
 // Game
