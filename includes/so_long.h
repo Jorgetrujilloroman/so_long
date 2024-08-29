@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 14:23:54 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 19:06:03 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_game
 	size_t			height;
 	size_t			moves;
 	size_t			fish;
+	size_t			eaten;
 	size_t			dolphin_x;
 	size_t			dolphin_y;
 	size_t			exit_x;
