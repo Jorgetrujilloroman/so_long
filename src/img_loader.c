@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:41:38 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:38:44 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:32:14 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_img	*load_all_textures(mlx_t *mlx, t_img *img)
 {
 	load_texture(mlx, "./sprites/sand.png", &img->sand);
-	load_texture(mlx, "./sprites/rock.png", &img->rock);
+	load_texture(mlx, "./sprites/coral.png", &img->coral);
 	load_texture(mlx, "./sprites/fish.png", &img->fish);
 	load_texture(mlx, "./sprites/exit_open.png", &img->exit_open);
 	load_texture(mlx, "./sprites/exit_closed.png", &img->exit_closed);

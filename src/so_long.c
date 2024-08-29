@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:39:42 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:34:09 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,8 @@ int	main(int argc, char **argv)
 		error_msg("Failed to initialite images");
 	game->img = images;
 	fill_background(game);
+	render_map(game);
+	mlx_loop(game->mlx);
+	mlx_terminate(game->mlx);
+	return (EXIT_SUCCESS);
 }

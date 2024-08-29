@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 18:01:25 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:42:08 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 typedef struct s_img
 {
 	mlx_image_t	*sand;
-	mlx_image_t	*rock;
+	mlx_image_t	*coral;
 	mlx_image_t	*fish;
 	mlx_image_t	*dolphin;
 	mlx_image_t	*enemy;
@@ -71,6 +71,7 @@ size_t	get_element_pos(t_game	*game, char element, char coordinate);
 
 // Map Rendering
 void	fill_background(t_game *game);
+void	render_map(t_game *game);
 
 // Path checker
 void	flood_fill(t_game *game);

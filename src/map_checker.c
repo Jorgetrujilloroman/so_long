@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_checks.c                                       :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:54:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/23 17:51:47 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:15:11 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	map_content_check(char *map)
 			exit++;
 		if (map[i] == 'C')
 			fish++;
-		if (!ft_strchr("10PEC\n", map[i]))
+		if (!ft_strchr("10PECX\n", map[i]))
 			error_msg("Invalid characters on map. Please provide a valid map.");
 		i++;
 	}
