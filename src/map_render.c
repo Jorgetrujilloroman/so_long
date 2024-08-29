@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 17:46:02 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 12:54:04 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:38:30 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,5 @@ void	render_map(t_game *game)
 		}
 		y++;
 	}
+	print_text(game);
 }

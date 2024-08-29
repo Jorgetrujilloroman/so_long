@@ -17,6 +17,8 @@ SRC			:= ./src/so_long.c \
 				./src/src/map_render.c \
 				./src/src/path_checker.c \
 				./src/src/img_loader.c \
+				./src/src/text_printer.c \
+				./src/src/movements.c \
 				./lib/get_next_line/get_next_line.c \
 				./lib//get_next_line/get_next_line_utils.c
 

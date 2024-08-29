@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:41:38 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 11:32:14 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:04:59 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_img	*load_all_textures(mlx_t *mlx, t_img *img)
 	load_texture(mlx, "./sprites/exit_closed.png", &img->exit_closed);
 	load_texture(mlx, "./sprites/dolphin.png", &img->dolphin);
 	load_texture(mlx, "./sprites/enemy.png", &img->enemy);
+	load_texture(mlx, "./sprites/fish_blue.png", &img->fish_icon);
 	return (img);
 }
 

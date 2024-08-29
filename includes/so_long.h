@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 11:42:08 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:23:54 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ typedef struct s_img
 	mlx_image_t	*enemy;
 	mlx_image_t	*exit_closed;
 	mlx_image_t	*exit_open;
+	mlx_image_t	*moves_text;
+	mlx_image_t	*moves_counter;
+	mlx_image_t	*fish_counter;
+	mlx_image_t	*fish_icon;
 }	t_img;
 
 
@@ -72,6 +76,7 @@ size_t	get_element_pos(t_game	*game, char element, char coordinate);
 // Map Rendering
 void	fill_background(t_game *game);
 void	render_map(t_game *game);
+void	print_text(t_game *game);
 
 // Path checker
 void	flood_fill(t_game *game);
@@ -84,5 +89,8 @@ void	load_dolphin_textures(t_game *game);
 
 // Game
 t_game	*game_init(char **grid);
+
+// Movement
+void	move_hook(mlx_key_data_t key_data, void *data);
 
 #endif
