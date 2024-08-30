@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 19:06:03 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/30 14:10:39 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@
 
 # define PIXELS 64
 
+typedef struct s_txt_bg
+{
+	int			width;
+	int			height;
+	uint32_t	color;
+}	t_txt_bg;
+
 typedef struct s_img
 {
 	mlx_image_t	*sand;
@@ -35,7 +42,6 @@ typedef struct s_img
 	mlx_image_t	*moves_text;
 	mlx_image_t	*moves_counter;
 	mlx_image_t	*fish_counter;
-	mlx_image_t	*fish_icon;
 }	t_img;
 
 
@@ -78,6 +84,7 @@ size_t	get_element_pos(t_game	*game, char element, char coordinate);
 void	fill_background(t_game *game);
 void	render_map(t_game *game);
 void	print_text(t_game *game);
+void	print_eaten_fish(t_game *game);
 
 // Path checker
 void	flood_fill(t_game *game);
@@ -91,7 +98,11 @@ void	load_dolphin_textures(t_game *game);
 // Game
 t_game	*game_init(char **grid);
 
-// Movement
+// Movement & directions
 void	move_hook(mlx_key_data_t key_data, void *data);
+t_game	*move_up(t_game *game);
+t_game	*move_down(t_game *game);
+t_game	*move_left(t_game *game);
+t_game	*move_right(t_game *game);
 
 #endif

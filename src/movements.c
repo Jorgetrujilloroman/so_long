@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:15:03 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 19:20:12 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:12:40 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 		mlx_texture_to_image
 } */
 
-void	move_player(t_game *game, char axis, char dir)
+static void	move_player(t_game *game, char axis, char dir)
 {
 	//load_dolphin(game, dir);
 	if (axis == 'y')

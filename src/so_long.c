@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 13:31:06 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 14:20:29 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:17:30 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	game->img = images;
 	fill_background(game);
 	render_map(game);
-	mlx_loop_hook(game->mlx, move_hook, game);
+	mlx_key_hook(game->mlx, move_hook, game);
 	mlx_loop(game->mlx);
 	mlx_terminate(game->mlx);
 	return (EXIT_SUCCESS);
