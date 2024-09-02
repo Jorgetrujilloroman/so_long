@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 13:44:31 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:02:22 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ size_t	get_element_pos(t_game	*game, char element, char coordinate);
 void	fill_background(t_game *game);
 void	render_map(t_game *game);
 void	print_text(t_game *game);
+void	print_moves_nbr(t_game *game);
 void	print_eaten_fish(t_game *game);
 
 // Path checker
@@ -100,6 +101,7 @@ bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
 
 // Game
 t_game	*game_init(char **grid);
+void	check_game_status(t_game *game);
 
 // Movement & directions
 void	move_hook(mlx_key_data_t key_data, void *data);

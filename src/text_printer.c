@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:37:57 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/30 14:33:50 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:03:18 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,17 @@ void	print_eaten_fish(t_game *game)
 		mlx_delete_image(game->mlx, game->img->fish_counter);
 	game->img->fish_counter = mlx_put_string(game->mlx, str,
 			180, game->height * 64 - 44);
+	free(str);
+}
+
+void	print_moves_nbr(t_game *game)
+{
+	char	*str;
+
+	str = ft_itoa(game->moves);
+	if (game->img->moves_counter)
+		mlx_delete_image(game->mlx, game->img->moves_counter);
+	game->img->moves_counter = mlx_put_string(game->mlx, str,
+			80, game->height * 64 - 44);
 	free(str);
 }

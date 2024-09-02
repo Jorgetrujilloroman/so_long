@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 18:48:22 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 13:32:43 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:00:34 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ t_game	*move_up(t_game *game)
 		game->img->dolphin->instances[0].y -= PIXELS;
 		game->moves++;
 	}
-	//check_game_status();
 	return (game);
 }
 
@@ -72,7 +71,6 @@ t_game	*move_down(t_game *game)
 		game->img->dolphin->instances[0].y += PIXELS;
 		game->moves++;
 	}
-	//check_game_status();
 	return (game);
 }
 
@@ -96,7 +94,6 @@ t_game	*move_left(t_game *game)
 		game->img->dolphin->instances[0].x -= PIXELS;
 		game->moves++;
 	}
-	//check_game_status();
 	return (game);
 }
 
@@ -120,6 +117,5 @@ t_game	*move_right(t_game *game)
 		game->img->dolphin->instances[0].x += PIXELS;
 		game->moves++;
 	}
-	//check_game_status();
 	return (game);
 }

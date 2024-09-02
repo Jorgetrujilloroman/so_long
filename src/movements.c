@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:15:03 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 13:45:14 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:00:40 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	move_player(t_game *game, char axis, char dir)
 			move_right(game);
 	}
 	load_dolphin(game, dir);
+	check_game_status(game);
 }
 
 void	move_hook(mlx_key_data_t key_data, void *data)
