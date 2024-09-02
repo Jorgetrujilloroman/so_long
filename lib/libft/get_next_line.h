@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 16:51:30 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/01/18 16:56:44 by jotrujil         ###   ########.fr       */
+/*   Created: 2024/02/05 18:18:29 by jotrujil          #+#    #+#             */
+/*   Updated: 2024/09/02 17:52:29 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	t_list	*next_node;
-	t_list	*current_node;
+# define GET_NEXT_LINE_H
 
-	current_node = lst;
-	while (current_node != NULL)
-	{
-		next_node = current_node->next;
-		f(current_node->content);
-		current_node = next_node;
-	}
-}
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include "libft.h"
+
+# ifndef BUFFER_SIZE
+
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+size_t	ft_strlen(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
+#endif

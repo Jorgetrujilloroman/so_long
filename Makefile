@@ -6,7 +6,7 @@ MLX42FLAGS	:= -ldl -lglfw -pthread -lm
 
 MLX42		:= ./lib/MLX42/build/libmlx42.a
 LIBFT		:= ./lib/libft/libft.a
-INCLUDE 	:= -I ./includes -I ./lib/MLX42/include -I .lib/get_next_line
+INCLUDE 	:= -I ./includes -I ./lib/MLX42/include
 
 SRC			:= ./src/so_long.c \
 				./src/utils.c \
@@ -20,8 +20,6 @@ SRC			:= ./src/so_long.c \
 				./src/src/text_printer.c \
 				./src/src/movements.c \
 				./src/src/directions.c \
-				./lib/get_next_line/get_next_line.c \
-				./lib//get_next_line/get_next_line_utils.c
 
 OBJ_DIR 	:= obj
 # Generate object files inside obj/ folder
@@ -45,10 +43,6 @@ $(LIBFT):
 	@$(MAKE) --no-print-directory -C ./lib/libft
 
 $(OBJ_DIR)/%.o: ./src/%.c
-	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
-$(OBJ_DIR)/%.o: ./lib/get_next_line/%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 

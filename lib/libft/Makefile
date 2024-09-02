@@ -19,17 +19,12 @@ SRC = 		ft_isalpha.c ft_isdigit.c\
 			ft_split.c ft_itoa.c \
 			ft_strmapi.c ft_striteri.c \
 			ft_putchar_fd.c ft_putstr_fd.c \
-			ft_putendl_fd.c ft_putnbr_fd.c
-
-BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-			ft_lstclear_bonus.c ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c
+			ft_putendl_fd.c ft_putnbr_fd.c \
+			get_next_line.c get_next_line_utils.c \
+			ft_printf.c libftprintf.c
 
 OBJ_DIR := obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
-BONUS_OBJS = $(addprefix $(OBJ_DIR)/, $(BONUS_SRC:.c=.o))
 
 RED     := \033[31m
 GREEN   := \033[32m
@@ -43,22 +38,15 @@ $(OBJ_DIR)/%.o: %.c
 	
 $(NAME): $(OBJS)
 	@echo "$(RED)------------------------------$(RESET)"
-	@echo "Compiling $(YELLOW)$(PROJECT)$(RESET) with $(BLUE)$(CFLAGS)$(RESET)..."
-	@ar rcs $(NAME) $(OBJS)
+	@echo "Compiling $(YELLOW)$(PROJECT)$(RESET) with $(BLUE) get_next_line, ft_printf $(RESET) and flags: $(BLUE) $(CFLAGS)$(RESET)..."
+	@ar rcs $(NAME) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
 	@echo "$(GREEN)Done! ✅$(RESET)"
 	@echo "$(RED)------------------------------$(RESET)"
 
-all: $(NAME)
-
-bonus: $(NAME) $(BONUS_OBJS)
-	@echo "$(RED)------------------------------$(RESET)"
-	@echo "Compiling $(YELLOW)$(PROJECT) Bonus$(RESET)..."
-	@ar rcs $(NAME) $(BONUS_OBJS)
-	@echo "$(GREEN)Done! ✅$(RESET)"
-	@echo "$(RED)------------------------------$(RESET)"
+all: $(NAME) $(PRINTF_OBJS) $(GNL_OBJS)
 
 clean:
-	@rm -rf $(OBJ_DIR) *.out *.gch *.tmp
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -rf $(NAME) 

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:01 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 13:59:47 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:24:20 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,18 @@ void	error_msg(char *msg)
 void	check_game_status(t_game *game)
 {
 	print_moves_nbr(game);
+
+	if (game->eaten == game->fish)
+	{
+		if (mlx_image_to_window(game->mlx, game->img->exit_open,
+				game->exit_x * PIXELS, game->exit_y * PIXELS) < 0)
+			error_msg("Error displaying open exit image to window");
+		mlx_delete_image(game->mlx, game->img->exit_closed);
+		game->grid[game->exit_y][game->exit_x] = 0;
+	}
+	if (game->dolphin_y == game->exit_y && game->dolphin_x == game->exit_x)
+	{
+		sleep(2);
+		mlx_close_window(game->mlx);
+	}
 }

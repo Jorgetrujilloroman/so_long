@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:16:18 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:14:21 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_game	*game_init(char **grid)
 	game->dolphin_x = get_element_pos(game, 'P', 'x');
 	game->dolphin_y = get_element_pos(game, 'P', 'y');
 	game->exit_x = get_element_pos(game, 'E', 'x');
-	game->exit_x = get_element_pos(game, 'E', 'y');
+	game->exit_y = get_element_pos(game, 'E', 'y');
 	load_dolphin_textures(game);
 	return (game);
 }
