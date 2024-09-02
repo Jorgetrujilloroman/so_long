@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/30 14:10:39 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:44:31 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <string.h>
 
 # define PIXELS 64
 
@@ -94,6 +95,8 @@ t_img	*img_init(mlx_t *mlx);
 t_img	*load_all_textures(mlx_t *mlx, t_img *img);
 void	load_texture(mlx_t *mlx, char *file_path, mlx_image_t **texture);
 void	load_dolphin_textures(t_game *game);
+bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
+			uint32_t x, uint32_t y);
 
 // Game
 t_game	*game_init(char **grid);

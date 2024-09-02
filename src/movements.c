@@ -6,21 +6,26 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:15:03 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/30 13:12:40 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:45:14 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/* void	load_dolphin(t_game *game, char dir)
+static void	load_dolphin(t_game *game, char dir)
 {
 	if (dir == 'u')
-		mlx_texture_to_image
-} */
+		mlx_draw_texture(game->img->dolphin, game->dolphin_up, 0, 0);
+	if (dir == 'd')
+		mlx_draw_texture(game->img->dolphin, game->dolphin_down, 0, 0);
+	if (dir == 'r')
+		mlx_draw_texture(game->img->dolphin, game->dolphin_right, 0, 0);
+	if (dir == 'l')
+		mlx_draw_texture(game->img->dolphin, game->dolphin_left, 0, 0);
+}
 
 static void	move_player(t_game *game, char axis, char dir)
 {
-	//load_dolphin(game, dir);
 	if (axis == 'y')
 	{
 		if (dir == 'u')
@@ -35,6 +40,7 @@ static void	move_player(t_game *game, char axis, char dir)
 		if (dir == 'r')
 			move_right(game);
 	}
+	load_dolphin(game, dir);
 }
 
 void	move_hook(mlx_key_data_t key_data, void *data)

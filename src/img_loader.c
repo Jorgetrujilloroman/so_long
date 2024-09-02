@@ -6,11 +6,38 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:41:38 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/30 13:56:30 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:43:59 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
+	uint32_t x, uint32_t y)
+{
+	uint8_t		*pixelx;
+	uint8_t		*pixeli;
+	uint32_t	i;
+
+	if (!image || !texture)
+		return (false);
+	if (texture->width > image->width || texture->height > image->height)
+		return (false);
+	if (x > image->width || y > image->height)
+		return (false);
+
+	i = 0;
+	while (i < texture->height)
+	{
+		pixelx = &texture->pixels[
+			(i * texture->width) * texture->bytes_per_pixel];
+		pixeli = &image->pixels[
+			((i + y) * image->width + x) * texture->bytes_per_pixel];
+		memmove(pixeli, pixelx, texture->width * texture->bytes_per_pixel);
+		i++;
+	}
+	return (true);
+}
 
 t_img	*load_all_textures(mlx_t *mlx, t_img *img)
 {
