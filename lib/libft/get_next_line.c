@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:17:26 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/02/12 18:35:47 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:57:47 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,13 +117,3 @@ char	*get_next_line(int fd)
 	buffer = ft_next_lines(buffer);
 	return (line);
 }
-
-/* int	main(void)
-{
-	int	fd = open("test.txt", O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	close(fd);
-} */

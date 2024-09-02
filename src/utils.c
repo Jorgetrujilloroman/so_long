@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:01 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 14:24:20 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:55:15 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	check_game_status(t_game *game)
 	{
 		sleep(2);
 		mlx_close_window(game->mlx);
+		ft_printf("🎉🎉 Congratulations!! 🎉🎉\n");
 	}
 }

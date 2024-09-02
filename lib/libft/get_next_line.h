@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:18:29 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 17:52:29 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:57:26 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 #endif

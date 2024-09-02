@@ -6,23 +6,11 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:11:47 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 17:46:50 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:58:44 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
-}
 
 int	ft_putnbr(int n)
 {
