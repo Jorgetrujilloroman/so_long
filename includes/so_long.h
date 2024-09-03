@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 17:15:15 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:37:44 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,16 @@ typedef struct s_game
 	mlx_texture_t	*dolphin_right;
 	t_img			*img;
 }	t_game;
+
+typedef struct s_enemy_move
+{
+	int	*x;
+	int	*y;
+	int	ran_x;
+	int	ran_y;
+	int	index_x;
+	int	index_y;
+}	t_enemy_move;
 
 void	error_msg(char *msg);
 
