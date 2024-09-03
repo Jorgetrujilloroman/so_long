@@ -20,6 +20,7 @@ SRC			:= ./src/so_long.c \
 				./src/src/text_printer.c \
 				./src/src/movements.c \
 				./src/src/directions.c \
+				./src/src/enemies.c \
 
 OBJ_DIR 	:= obj
 # Generate object files inside obj/ folder

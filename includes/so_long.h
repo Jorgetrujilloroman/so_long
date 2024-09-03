@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 12:56:23 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:15:15 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,12 @@ void	load_texture(mlx_t *mlx, char *file_path, mlx_image_t **texture);
 void	load_dolphin_textures(t_game *game);
 bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
 			uint32_t x, uint32_t y);
-void	win_display(t_game *game);
+void	win_lose_display(t_game *game, char result);
 
 // Game
 t_game	*game_init(char **grid);
 void	check_game_status(t_game *game);
+void	close_window_after_delay(t_game *game);
 
 // Movement & directions
 void	move_hook(mlx_key_data_t key_data, void *data);
@@ -111,5 +112,6 @@ t_game	*move_up(t_game *game);
 t_game	*move_down(t_game *game);
 t_game	*move_left(t_game *game);
 t_game	*move_right(t_game *game);
+void	enemy_patrol(void *temp_game);
 
 #endif

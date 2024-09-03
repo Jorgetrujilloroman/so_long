@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:37:57 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 13:07:34 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:19:12 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,21 @@ void	print_moves_nbr(t_game *game)
 	free(str);
 }
 
-void	win_display(t_game *game)
+void	win_lose_display(t_game *game, char result)
 {
 	t_txt_bg	bg;
 	int			x_center;
 	int			y_center;
 	char		*str;
 
-	str = "Congratulations!! You won the game!";
+	if (result == 'w')
+		str = "Congratulations!! You won the game!";
+	else if (result == 'l')
+		str = "You were killed by Arlong. Try again!";
 
 	bg.width = 520;
-    bg.height = 120;
-    bg.color = 0x3E2D00FF;
+	bg.height = 120;
+	bg.color = 0x3E2D00FF;
 
 	x_center = (game->mlx->width - bg.width) / 2;
 	y_center = (game->mlx->height - bg.height) / 2;
