@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:09:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 14:14:21 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:57:33 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_game	*game_init(char **grid)
 	game = (t_game *)ft_calloc(1, sizeof(t_game));
 	if (!game)
 		error_msg("Game struct memory allocation failed.");
+	game->game_over = 0;
 	game->grid = grid;
 	game->width = ft_strlen(grid[0]);
 	game->height = count_rows(grid);

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 17:48:18 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:56:23 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
+# include <time.h>
 
 # define PIXELS 64
 
@@ -48,6 +49,7 @@ typedef struct s_img
 typedef struct s_game
 {
 	char			**grid;
+	int				game_over;
 	size_t			width;
 	size_t			height;
 	size_t			moves;
@@ -97,6 +99,7 @@ void	load_texture(mlx_t *mlx, char *file_path, mlx_image_t **texture);
 void	load_dolphin_textures(t_game *game);
 bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
 			uint32_t x, uint32_t y);
+void	win_display(t_game *game);
 
 // Game
 t_game	*game_init(char **grid);

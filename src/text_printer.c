@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:37:57 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 14:03:18 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:07:34 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,27 @@ void	print_moves_nbr(t_game *game)
 	game->img->moves_counter = mlx_put_string(game->mlx, str,
 			80, game->height * 64 - 44);
 	free(str);
+}
+
+void	win_display(t_game *game)
+{
+	t_txt_bg	bg;
+	int			x_center;
+	int			y_center;
+	char		*str;
+
+	str = "Congratulations!! You won the game!";
+
+	bg.width = 520;
+    bg.height = 120;
+    bg.color = 0x3E2D00FF;
+
+	x_center = (game->mlx->width - bg.width) / 2;
+	y_center = (game->mlx->height - bg.height) / 2;
+	draw_background(game->mlx, x_center, y_center, bg);
+	bg.width = 500;
+	bg.height = 100;
+	bg.color = 0x08006CFF;
+	draw_background(game->mlx, x_center + 10, y_center + 10, bg);
+	mlx_put_string(game->mlx, str, x_center + 80, y_center + 50);
 }

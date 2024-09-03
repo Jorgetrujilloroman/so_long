@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:15:03 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 14:00:40 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/03 12:57:04 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	load_dolphin(t_game *game, char dir)
 
 static void	move_player(t_game *game, char axis, char dir)
 {
+	if (game->game_over)
+		return ;
 	if (axis == 'y')
 	{
 		if (dir == 'u')
