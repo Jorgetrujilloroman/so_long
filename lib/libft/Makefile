@@ -37,7 +37,6 @@ $(OBJ_DIR)/%.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 $(NAME): $(OBJS)
-	@echo "$(RED)------------------------------$(RESET)"
 	@echo "Compiling $(YELLOW)$(PROJECT)$(RESET) with $(BLUE) get_next_line, ft_printf $(RESET) and flags: $(BLUE) $(CFLAGS)$(RESET)..."
 	@ar rcs $(NAME) $(OBJS) $(PRINTF_OBJS) $(GNL_OBJS)
 	@echo "$(GREEN)Done! ✅$(RESET)"

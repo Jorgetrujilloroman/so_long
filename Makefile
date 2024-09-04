@@ -40,6 +40,9 @@ $(NAME): $(MLX42) $(LIBFT) $(OBJ)
 	@echo "$(GREEN)Done! ✅$(RESET)"
 	@echo "$(RED)------------------------------$(RESET)"
 
+$(MLX42):
+	@$(MAKE) --no-print-directory -C ./lib/MLX42
+
 $(LIBFT):
 	@$(MAKE) --no-print-directory -C ./lib/libft
 
@@ -55,6 +58,7 @@ fclean: clean
 # Change to the libs directory and then execute fclean
 	@rm -rf $(NAME)
 	@$(MAKE) --no-print-directory fclean -C ./lib/libft
+	@$(MAKE) --no-print-directory fclean -C ./lib/MLX42
 
 re: clean all
 
