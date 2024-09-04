@@ -6,11 +6,31 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:01 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 17:25:29 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:53:32 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	free_game(t_game *game)
+{
+	if (game)
+	{
+		if (game->grid)
+			free_grid(game->grid, game->height);
+		if (game->img)
+			free(game->img);
+		if (game->dolphin_up)
+			mlx_delete_texture(game->dolphin_up);
+		if (game->dolphin_down)
+			mlx_delete_texture(game->dolphin_down);
+		if (game->dolphin_left)
+			mlx_delete_texture(game->dolphin_left);
+		if (game->dolphin_right)
+			mlx_delete_texture(game->dolphin_right);
+		free(game);
+	}
+}
 
 void	error_msg(char *msg)
 {
@@ -25,7 +45,7 @@ void	close_window_after_delay(t_game *game)
 
 	if (start_time == 0)
 		start_time = time(NULL);
-	if (time(NULL) - start_time >= 5)
+	if (time(NULL) - start_time >= 3)
 		mlx_close_window(game->mlx);
 }
 

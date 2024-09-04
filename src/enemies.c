@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 14:46:53 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 18:13:21 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:31:50 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	enemy_patrol(void *temp_game)
 	game = (t_game *)temp_game;
 	enemy_index = 0;
 	check_enemies_status(game);
-	if (freq_move_counter++ < 300)
+	if (freq_move_counter++ < 150)
 		return ;
 	while (enemy_index < game->img->enemy->count)
 	{

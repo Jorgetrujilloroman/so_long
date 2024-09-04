@@ -6,13 +6,13 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 16:22:30 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:12:27 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:10:20 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	free_grid(char **grid, size_t height)
+void	free_grid(char **grid, size_t height)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:48:31 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/03 17:37:44 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:10:51 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ void	win_lose_display(t_game *game, char result);
 t_game	*game_init(char **grid);
 void	check_game_status(t_game *game);
 void	close_window_after_delay(t_game *game);
+void	free_grid(char **grid, size_t height);
+void	free_game(t_game *game);
 
 // Movement & directions
 void	move_hook(mlx_key_data_t key_data, void *data);

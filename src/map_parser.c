@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:14:49 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/28 17:17:11 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/09/04 12:43:14 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*read_map(char *map)
 {
 	char	*line;
 	char	*map_readed;
+	char	*temp;
 	int		fd;
 
 	fd = open(map, O_RDONLY);
@@ -27,7 +28,9 @@ char	*read_map(char *map)
 		line = get_next_line(fd);
 		if (line)
 		{
+			temp = map_readed;
 			map_readed = ft_strjoin(map_readed, line);
+			free(temp);
 			free(line);
 		}
 		else
