@@ -1,7 +1,7 @@
 PROJECT 	:= so_long 
 CC 			:= gcc
 NAME		:= so_long
-CFLAGS		:= -Wextra -Wall -Werror
+CFLAGS		:= -Wextra -Wall -Werror #-g -fsanitize=address
 MLX42FLAGS	:= -ldl -lglfw -pthread -lm
 
 MLX42		:= ./lib/MLX42/build/libmlx42.a
@@ -23,7 +23,7 @@ SRC			:= ./src/so_long.c \
 				./src/src/enemies.c \
 
 OBJ_DIR 	:= obj
-# Generate object files inside obj/ folder
+
 OBJ 		:= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
 RED     := \033[31m
