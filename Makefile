@@ -1,7 +1,7 @@
 PROJECT 	:= so_long 
 CC 			:= gcc
 NAME		:= so_long
-CFLAGS		:= -Wextra -Wall #-Werror
+CFLAGS		:= -Wextra -Wall -Werror
 MLX42FLAGS	:= -ldl -lglfw -pthread -lm
 
 MLX42		:= ./lib/MLX42/build/libmlx42.a
@@ -41,7 +41,11 @@ $(NAME): $(MLX42) $(LIBFT) $(OBJ)
 	@echo "$(RED)------------------------------$(RESET)"
 
 $(MLX42):
-	@$(MAKE) --no-print-directory -C ./lib/MLX42
+	@echo "Compiling $(YELLOW)MLX42$(RESET)..."
+	@cd lib/MLX42 && cmake -B build
+	@cd lib/MLX42 && cmake --build build -j4
+	@echo "$(GREEN)Done! ✅$(RESET)"
+	@echo "$(RED)------------------------------$(RESET)"
 
 $(LIBFT):
 	@$(MAKE) --no-print-directory -C ./lib/libft
@@ -53,12 +57,13 @@ $(OBJ_DIR)/%.o: ./src/%.c
 clean:
 	@rm -rf $(OBJ_DIR)
 	@$(MAKE) --no-print-directory clean -C ./lib/libft
+	@rm -rf ./lib/MLX42/build
 
 fclean: clean
-# Change to the libs directory and then execute fclean
 	@rm -rf $(NAME)
 	@$(MAKE) --no-print-directory fclean -C ./lib/libft
-	@$(MAKE) --no-print-directory fclean -C ./lib/MLX42
+	@rm -f $(MLX42)
+	@rm -rf ./lib/MLX42/build
 
 re: clean all
 
