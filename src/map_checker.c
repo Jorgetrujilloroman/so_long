@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 12:54:45 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/08/29 13:15:11 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:24:38 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	map_content_check(char *map)
 	player = 0;
 	exit = 0;
 	fish = 0;
-
 	while (map[i])
 	{
 		if (map[i] == 'P')

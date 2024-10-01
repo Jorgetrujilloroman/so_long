@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 16:41:38 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/02 13:43:59 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:25:30 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ bool	mlx_draw_texture(mlx_image_t *image, mlx_texture_t *texture,
 		return (false);
 	if (x > image->width || y > image->height)
 		return (false);
-
 	i = 0;
 	while (i < texture->height)
 	{

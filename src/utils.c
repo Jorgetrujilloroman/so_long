@@ -6,7 +6,7 @@
 /*   By: jotrujil <jotrujil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 11:53:01 by jotrujil          #+#    #+#             */
-/*   Updated: 2024/09/04 12:53:32 by jotrujil         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:25:39 by jotrujil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	close_window_after_delay(t_game *game)
 void	check_game_status(t_game *game)
 {
 	print_moves_nbr(game);
-
 	if (game->eaten == game->fish)
 	{
 		if (mlx_image_to_window(game->mlx, game->img->exit_open,
